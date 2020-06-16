@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-import _products from '../Static/Products.json'
 import Product from '../Components/Product'
+import { useSelector } from 'react-redux'
 
 function SearchPage() {
 
   const params = useParams()
 
   const { query }  = params
+
+  const _products = useSelector(state => state.Products)
 
   const [products, setProducts] = useState([])
 

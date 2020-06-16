@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
 import logo from '../logo.svg'
 import categories from '../Static/Categories.json'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function Header() {
 
@@ -11,6 +12,8 @@ function Header() {
   const otherCategories = categories.slice(5)
 
   const history = useHistory()
+
+  const account = useSelector(state => state.Account)
 
   const [initialRoute, setInitialRoute] = useState(history.location.pathname)
   const [inSearch, setInSearch] = useState(false)
@@ -28,6 +31,10 @@ function Header() {
     }
   }
 
+  useEffect(() => {
+    console.log(account)
+  }, [account])
+
   return (
     <div className='header-wrapper'>
       <header className='header'>
@@ -44,10 +51,23 @@ function Header() {
             <div>
               <input onChange={handleSearchChange} className='search' type='text' placeholder='Pesquise a sua próxima compra aqui...' name='search'/>
             </div>
-            <div className='grid-2'>
-              <div>
-                
-              </div>
+            <div className='account-actions'>
+              <h5 className='my-account-link'>
+                <Link to='/carrinho'>
+                  Carrinho
+                </Link>
+              </h5>
+              <h5 className='my-account-link'>
+                {account.logged ? (
+                  <Link to='/minha-conta'>
+                    Olá, {account.nome.split(' ')[0]}
+                  </Link>
+                ) : (
+                  <Link to='/login'>
+                    Login
+                  </Link>
+                )}
+              </h5>
             </div>
           </div>
         </div>

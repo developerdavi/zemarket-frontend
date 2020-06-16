@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 
+import api from '../Services/Api'
+import { useDispatch } from 'react-redux'
+
 function LoginPage() {
 
+  const dispatch = useDispatch()
+
+  const [enabled, setEnabled] = useState(false)
+
   const [loginData, setLoginData] = useState({ })
-  const [signupData, setSignupData] = useState({ rua: 'Por favor, preencha o CEP!' })
+  const [signupData, setSignupData] = useState({ 
+    rua: 'Por favor, preencha o CEP!',
+    bairro: 'Por favor, preencha o CEP!',
+    cidade: 'Por favor, preencha o CEP!'
+  })
 
   const handleLoginChange = (e) => {
     const data = loginData
@@ -23,6 +34,13 @@ function LoginPage() {
       data['bairro'] = response.data.neighborhood
       data['cidade'] = response.data.city
 
+      if (data['bairro'] !== 'Salgado Filho') {
+        setEnabled(false)
+        alert('Infelizmente, esse bairro não é atendido pelo nosso estabelecimento')
+      } else {
+        setEnabled(true)
+      }
+
       setSignupData(data)
     }
   }
@@ -35,11 +53,40 @@ function LoginPage() {
         handleCepDataFetching(e.target.value)
       } else {
         data.rua = 'Por favor, preencha o CEP!'
+        data.bairro = 'Por favor, preencha o CEP!'
+        data.cidade = 'Por favor, preencha o CEP!'
       }
     }
 
     data[e.target.name] = e.target.value
     setSignupData(data)
+  }
+
+  const handleSignupSubmit = async () => {
+    const data = { ...signupData }
+
+    const response = await api.post('/clientes', data)
+
+    if (response.status === 201) {
+      alert('Cliente cadastrado com sucesso')
+    }
+  }
+
+  const handleLoginSubmit = async () => {
+    const data = { ...loginData }
+
+    const response = await api.get('/clientes')
+
+    if (response.status === 200) {
+      const found = response.data.find(x => x.email === data.email)
+      if (found) {
+        alert('Logado com sucesso')
+
+        dispatch({ type: 'change_account_data', Account: { logged: true, ...found } })
+      } else {
+        alert('Dados inválidos')
+      }
+    }
   }
 
   return (
@@ -58,7 +105,7 @@ function LoginPage() {
           <h4>Senha</h4>
           <input onChange={handleLoginChange} type='password' name='senha'/>
 
-          <button className='btn'>Entrar</button>
+          <button onClick={handleLoginSubmit} className='btn'>Entrar</button>
         </div>
         <div className='card'>
           <h1>Não tenho conta</h1>
@@ -67,6 +114,8 @@ function LoginPage() {
           <input onChange={handleSignupChange} type='text' name='nome'/>
           <h4>CPF</h4>
           <input onChange={handleSignupChange} type='text' name='cpf'/>
+          <h4>Nascimento</h4>
+          <input onChange={handleSignupChange} type='date' name='nascimento'/>
           <h4>E-mail</h4>
           <input onChange={handleSignupChange} type='email' name='email'/>
           <h4>Senha</h4>
@@ -82,9 +131,9 @@ function LoginPage() {
           <h4>Número</h4>
           <input onChange={handleSignupChange} type='text' name='numero'/>
           <h4>Complemento</h4>
-          <input onChange={handleSignupChange} type='text' name='numero'/>
+          <input onChange={handleSignupChange} type='text' name='complemento'/>
 
-          <button className='btn'>Cadastrar</button>
+          <button disabled={!enabled} onClick={handleSignupSubmit} className='btn'>Cadastrar</button>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import Product from '../Components/Product'
 
-// import products from '../Static/Products.json'
 import { useSelector } from 'react-redux'
 
 function HomePage() {

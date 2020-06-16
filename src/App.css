@@ -79,6 +79,25 @@ header.categories .container {
   justify-content: space-between;
 }
 
+header .my-account-link  {
+  display: block;
+  width: 100%;
+}
+
+header .my-account-link a {
+  text-align: right;
+  color: white;
+  width: 100%;
+  display: block;
+  text-decoration: underline;
+}
+
+header div.account-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 li.category, li.category a {
   color: black;
   font-size: 1.1em;
@@ -222,7 +241,7 @@ div.card {
   padding-right: 20px;
 }
 
-input[type=text]:not(.search), input[type=email], input[type=password] {
+input[type=text]:not(.search), input[type=email], input[type=password], input[type=date] {
   border: none;
   height: 2.5em;
   width: 100%;
@@ -241,6 +260,26 @@ button.btn {
   margin-top: 20px;
 }
 
+/* CART PAGE */
+table.cart-table {
+  width: 100%;
+  border: 0;
+  /* border-collapse: separate; */
+  border-spacing: 0 5px;
+}
+
+table.cart-table thead tr th {
+  border-bottom: 5px solid #191919ee;
+  border-collapse: separate;
+  border-spacing: 5px 5px;
+}
+
+button.red {
+  background-color: #D61C1Caa;
+  color: white;
+  border: 1px solid #191919aa;
+  cursor: pointer;
+}
 
 /* PRODUCT PAGE */
 div.product-page-grid {

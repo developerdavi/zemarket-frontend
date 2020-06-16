@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-import _products from '../Static/Products.json'
-import categories from '../Static/Categories.json'
 import Product from '../Components/Product'
+
+import categories from '../Static/Categories.json'
+import { useSelector } from 'react-redux'
 
 function CategoryPage() {
 
@@ -11,6 +12,7 @@ function CategoryPage() {
 
   const { id }  = params
 
+  const _products = useSelector(state => state.Products)
   const [products, setProducts] = useState([])
   const [category, setCategory] = useState({ id: 0, nome: '' })
 
@@ -20,7 +22,7 @@ function CategoryPage() {
     if (category) {
       setCategory(category)
 
-      const products = _products.filter(x => x.categoria == category.id)
+      const products = _products.filter(x => x.id_categoria == category.id)
 
       if (products) {
         setProducts(products)
