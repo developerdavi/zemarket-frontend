@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nome": "Alimentos"
+  },
+  {
+    "id": 2,
+    "nome": "Bebidas"
+  },
+  {
+    "id": 3,
+    "nome": "Limpeza"
+  },
+  {
+    "id": 4,
+    "nome": "Higiene"
+  },
+  {
+    "id": 5,
+    "nome": "Verduras"
+  },
+  {
+    "id": 6,
+    "nome": "Carne"
+  },
+  {
+    "id": 7,
+    "nome": "Frios"
+  },
+  {
+    "id": 8,
+    "nome": "Teste"
+  },
+  {
+    "id": 9,
+    "nome": "Teste"
+  },
+  {
+    "id": 10,
+    "nome": "Teste"
+  }
+]

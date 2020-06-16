@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "Arroz branco Prato Fino 1kg",
+    "preco_venda": 8.30,
+    "categoria": 1,
+    "imagem": "https://media.gazetadopovo.com.br/bomgourmet/2019/06/bigstock-arroz-branco-768x307-63fc3350.jpg",
+    "estoque": 8,
+    "descricao": "O arroz (constituído por sete espécies, Oryza barthii, Oryza glaberrima, Oryza latifolia, Oryza longistaminata, Oryza punctata, Oryza rufipogon e Oryza sativa) é uma planta da família das gramíneas que alimenta mais da metade da população humana do mundo. É a terceira maior cultura cerealífera do mundo, apenas ultrapassada pelas de milho e trigo. É rico em hidratos de carbono. Para poder ser cultivado com sucesso, o arroz necessita de água em abundância, para manter a temperatura ambiente dentro de intervalos adequados, e, nos sistemas tradicionais, de mão-de-obra intensiva. Desenvolve-se bem mesmo em terrenos muito inclinados [carece de fontes] e é costume, nos países do sudeste asiático, encontrarem-se socalcos onde é cultivado. Em qualquer dos casos, a água mantém-se em constante movimento, embora circule a velocidade muito reduzida."
+  }, 
+  {
+    "id": 2,
+    "nome": "Feijão PINK 1kg",
+    "preco_venda": 5.80,
+    "categoria": 1,
+    "imagem": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2018/06/15/feijao-carioca.jpg",
+    "estoque": 8,
+    "descricao": "O arroz (constituído por sete espécies, Oryza barthii, Oryza glaberrima, Oryza latifolia, Oryza longistaminata, Oryza punctata, Oryza rufipogon e Oryza sativa) é uma planta da família das gramíneas que alimenta mais da metade da população humana do mundo. É a terceira maior cultura cerealífera do mundo, apenas ultrapassada pelas de milho e trigo. É rico em hidratos de carbono. Para poder ser cultivado com sucesso, o arroz necessita de água em abundância, para manter a temperatura ambiente dentro de intervalos adequados, e, nos sistemas tradicionais, de mão-de-obra intensiva. Desenvolve-se bem mesmo em terrenos muito inclinados [carece de fontes] e é costume, nos países do sudeste asiático, encontrarem-se socalcos onde é cultivado. Em qualquer dos casos, a água mantém-se em constante movimento, embora circule a velocidade muito reduzida."
+  },
+  {
+    "id": 3,
+    "nome": "Refrigerante Coca-Cola 2L",
+    "preco_venda": 8.30,
+    "categoria": 2,
+    "imagem": "https://araujo.vteximg.com.br/arquivos/ids/3712944-1000-1000/07894900011753.jpg?v=635869965272970000",
+    "estoque": 0,
+    "descricao": "O arroz (constituído por sete espécies, Oryza barthii, Oryza glaberrima, Oryza latifolia, Oryza longistaminata, Oryza punctata, Oryza rufipogon e Oryza sativa) é uma planta da família das gramíneas que alimenta mais da metade da população humana do mundo. É a terceira maior cultura cerealífera do mundo, apenas ultrapassada pelas de milho e trigo. É rico em hidratos de carbono. Para poder ser cultivado com sucesso, o arroz necessita de água em abundância, para manter a temperatura ambiente dentro de intervalos adequados, e, nos sistemas tradicionais, de mão-de-obra intensiva. Desenvolve-se bem mesmo em terrenos muito inclinados [carece de fontes] e é costume, nos países do sudeste asiático, encontrarem-se socalcos onde é cultivado. Em qualquer dos casos, a água mantém-se em constante movimento, embora circule a velocidade muito reduzida."
+  }, 
+  {
+    "id": 4,
+    "nome": "Vassoura noviça com cabo plastificado 120cm",
+    "preco_venda": 5.80,
+    "categoria": 3,
+    "imagem": "https://b2bnaweb.vteximg.com.br/arquivos/ids/5827484-1000-1000/830009.jpg?v=637124444307870000",
+    "estoque": 8,
+    "descricao": "O arroz (constituído por sete espécies, Oryza barthii, Oryza glaberrima, Oryza latifolia, Oryza longistaminata, Oryza punctata, Oryza rufipogon e Oryza sativa) é uma planta da família das gramíneas que alimenta mais da metade da população humana do mundo. É a terceira maior cultura cerealífera do mundo, apenas ultrapassada pelas de milho e trigo. É rico em hidratos de carbono. Para poder ser cultivado com sucesso, o arroz necessita de água em abundância, para manter a temperatura ambiente dentro de intervalos adequados, e, nos sistemas tradicionais, de mão-de-obra intensiva. Desenvolve-se bem mesmo em terrenos muito inclinados [carece de fontes] e é costume, nos países do sudeste asiático, encontrarem-se socalcos onde é cultivado. Em qualquer dos casos, a água mantém-se em constante movimento, embora circule a velocidade muito reduzida."
+  }
+]

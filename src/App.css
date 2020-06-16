@@ -1,38 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap');
+
+html, body {
+  background-color: #eaeaea;
+}
+
+html, body, * {
+  font-family: 'Kanit', sans-serif;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:link, a:active, a:visited {
+  color: black;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.header-wrapper {
+  border-bottom: 2px solid #555;
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img.header-logo {
+  height: 100%;
+  max-height: 75px;
+  margin-right: 25px;
+}
+
+header.header {
+  background-color: #1C7ED6;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+
+div.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+div.header-content > div {
+  width: 33%;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.header-content > div > a {
+  display: flex;
+  align-items: center;
+}
+
+input.search {
+  border: none;
+  height: 2.5em;
+  width: 100%;
+  padding-left: 10px;
+}
+
+input.search:hover, input.search:focus {
+  box-shadow: 0px 1px 6px #191919aa;
+}
+
+h1.brand-name {
+  font-size: 1.6em;
+  color: white;
+}
+
+header.categories .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li.category, li.category a {
+  color: black;
+  font-size: 1.1em;
+  text-decoration: none;
+  list-style: none;
+  transition: all cubic-bezier(1, 0, 0, 1) .25s;
+}
+
+li.category:not(.dropdown):hover {
+  transform: scale(1.2);
+  transition: all cubic-bezier(1, 0, 0, 1) .25s;
+}
+
+li.dropdown {
+  padding: 0;
+  margin: 0
+}
+
+li.dropdown ul.submenu {
+  display: none;
+  position: absolute;
+  margin-top: 0;
+  z-index: 999;
+}
+
+li.dropdown ul.submenu a {
+  width: 100%;
+}
+
+li.dropdown:hover ul.submenu {
+  display: block;
+  background: #fff;
+  width: 120px;
+  border-bottom: 2px solid #555;
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  text-align: left;
+  margin-left: -20px;
+}
+
+div.categories-header {
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+div.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+h2.homepage-title {
+  margin-top: 0;
+}
+
+div.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+div.product-grid > div:not() {
+  padding: 10%;
+}
+
+div.product-card {
+  padding: 10px;
+  background-color: #ffffffee;
+  transition: all ease .25s;
+  color: black !important;
+  text-decoration: none !important;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.52);
+  margin-bottom: 25px;
+}
+
+div.product-card:hover {
+  /* box-shadow: 0px 0px 3px #555; */
+  box-shadow: 0px 0px 10px #55555555;
+  transition: all ease .25s;
+}
+
+div.product-card div.product-title {
+  display: -webkit-box;
+  font-size: 1.5em;
+  font-weight: 200;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.5em !important;
+  margin-top: .25em;
+  line-height: 1.2em;
+}
+
+div.product-card div.product-image {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+div.product-card div.product-image > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+}
+
+div.product-card div.product-price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* COMPONENTS */
+div.breadcrumb {
+  margin-bottom: 20px;
+}
+
+div.breadcrumb a {
+  font-weight: bold;
+}
+
+div.breadcrumb > span:not(:first-child) {
+  margin-left: 5px;
+}
+
+div.card {
+  background-color: #fff;
+  min-height: 500px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #55555555;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+input[type=text]:not(.search), input[type=email], input[type=password] {
+  border: none;
+  height: 2.5em;
+  width: 100%;
+  padding-left: 10px;
+  background-color: #55555522;
+}
+
+button.btn {
+  border: none;
+  height: 2.5em;
+  background-color: #1CD666;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+/* PRODUCT PAGE */
+div.product-page-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+}
+
+div.product-page-grid .product-image {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+div.product-page-grid .product-image > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+}
+
+div.product-page-grid .product-content {
+  /* height: 400px; */
+}
+
+h1.product-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3.product-price {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+h3.product-no-stock {
+  color: #D61C1C;
+  text-transform: uppercase;
+}
+
+h5.product-installments {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 3em;
+}
+
+input.product-quantity {
+  /* border: none; */
+  height: 2.5em;
+  width: 100px;
+  padding-left: 10px;
+  border: 10px solid white;
+}
+
+input.product-quantity:hover, input.product-quantity:focus {
+  border: 1px solid #555555aa
+}
+
+button.product-buy-btn {
+  border: none;
+  height: 2.5em;
+  background-color: #1CD666;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  outline: 2px solid #1CD666;
+  margin-left: 3px;
+}
+
+button.product-buy-btn:hover {
+  outline: 1px solid #555555aa;
+}
+
+/* LOGIN PAGE */
+div.login-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+h4 {
+  margin-bottom: 10px;
 }
